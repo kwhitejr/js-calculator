@@ -8,6 +8,15 @@
 function calculatorModule() {
   var memory = 0;
   var total = 0;
+  function invalid(param) {
+    if (typeof param !== 'number') {
+      return "Not valid input.";
+    } else {
+      return false;
+    }
+    
+  }
+
   var calculator = {
 
   /**
@@ -16,9 +25,11 @@ function calculatorModule() {
    * @return { Number }    current total
    */
   load: function(x) {
-    if (typeof x !== 'number') {
-      return "Not valid input.";
+    
+    if (invalid(x)) {
+      return invalid(x);
     }
+
     total = x;
     return x;
   },
@@ -36,8 +47,8 @@ function calculatorModule() {
    * @param { Number } x
    */
   add: function(x) {
-    if (typeof x !== 'number') {
-      return "Not valid input.";
+    if (invalid(x)) {
+      return invalid(x);
     }
     total += x;
     return total;
@@ -48,8 +59,8 @@ function calculatorModule() {
    * @param  { Number } x
    */
   subtract: function(x) {
-    if (typeof x !== 'number') {
-      return "Not valid input.";
+    if (invalid(x)) {
+      return invalid(x);
     }
     total -= x;
     return total;
@@ -60,8 +71,8 @@ function calculatorModule() {
    * @param  { Number } x
    */
   multiply: function(x) {
-    if (typeof x !== 'number') {
-      return "Not valid input.";
+    if (invalid(x)) {
+      return invalid(x);
     }
     total *= x;
     return total;
@@ -72,8 +83,8 @@ function calculatorModule() {
    * @param  { Number } x
    */
   divide: function(x) {
-    if (typeof x !== 'number') {
-      return "Not valid input.";
+    if (invalid(x)) {
+      return invalid(x);
     }
     total /= x;
     return total;
