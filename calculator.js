@@ -36,6 +36,9 @@ function calculatorModule() {
    * @param { Number } x
    */
   add: function(x) {
+    if (typeof x !== 'number') {
+      return "Not valid input.";
+    }
     total += x;
     return total;
   },
